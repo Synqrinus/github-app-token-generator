@@ -7,6 +7,10 @@ inputs:
   app-id:
     description: GitHub App ID
     required: true
+  lifetime-minutes:
+    description: JWT lifitime in minutes
+    required: false
+    default: 10
   repo:
     description: Override GITHUB_REPOSITORY when creating the installation ID
     required: false
@@ -19,6 +23,7 @@ runs:
   args:
     - ${{ inputs.private-key }}
     - ${{ inputs.app-id }}
+    - ${{ inputs.lifetime-minutes }}
 author: Christer Edvartsen <christer.edvartsen@nav.no>
 branding:
   icon: unlock
