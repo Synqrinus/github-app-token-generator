@@ -1,6 +1,7 @@
 #!/bin/sh -e
-export PRIVATE_KEY=${1:?Usage: ${0} <private-key> <app-id>}
-export APP_ID=${2:?Usage: ${0} <private-key> <app-id>}
+export PRIVATE_KEY=${1:?Usage: ${0} <private-key> <app-id> <lifetime-minutes>}
+export APP_ID=${2:?Usage: ${0} <private-key> <app-id> <lifetime-minutes>}
+export LIFETIME_MINUTES=${3:?Usage: ${0} <private-key> <app-id> <lifetime-minutes>}
 repo=${GITHUB_REPOSITORY:?Missing required GITHUB_REPOSITORY environment variable}
 
 [[ ! -z "$INPUT_REPO" ]] && repo=$INPUT_REPO
